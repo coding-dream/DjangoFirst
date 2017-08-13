@@ -6,11 +6,17 @@
 </head>
 <body>
      <table>
+        <!--
+            这里 data 与上面的 Context 的 data 相对应。因为 data 是一个列表，它的每行是一个 tuple ，因此 row.0, row.1 就是取 tuple 的第一个和第二个元素。
+            | 是一个过滤符，它表示将前一个的处理结果作为输入传入下一个处理。因此 Django 的模板很强大，使用起来也非常直观和方便。 addslashes 是 Django 模板内置的过滤 Tag ，它用来将结果中的特殊字符加上反斜线。
+            最后 endfor 在下一行，表示上面每行模板后有一个回车。
+        -->
         {% for row in data %}
         <tr>
             <td>{{ row.0|addslashes}}</td>
             <td>{{ row.1|addslashes}}</td>
         </tr>
         {% endfor %}
+     </table>
 </body>
 </html>
