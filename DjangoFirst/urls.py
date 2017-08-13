@@ -18,6 +18,7 @@ from django.contrib import admin
 from app import views
 from app import xls_action
 from app import user_action
+from app import sql_action
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/',views.index),# 类似SpringMVC的@Controller注解  我的路由，重点是引号中的正则表达式和 views.index 函数(还实现index 函数)
@@ -27,4 +28,9 @@ urlpatterns = [
     url(r'^login/', user_action.login),
     url(r'^loginUI/', user_action.loginUI),
     url(r'^logout/', user_action.logout),
+
+    url(r'^sql/insert', sql_action.insert),
+    url(r'^sql/delete', sql_action.delete),
+    url(r'^sql/update', sql_action.update),
+    url(r'^sql/find', sql_action.find),
 ]

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app', # Django会自动搜索newtest/templates目录下的模板文件。
+    'app', # Django会自动搜索app/templates目录下的模板文件 或者创建数据库
 ]
 
 MIDDLEWARE = [
